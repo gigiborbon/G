@@ -494,6 +494,9 @@
         social: document.getElementById('social').value
       };
 
+      console.log('Submitting data:', data);
+      console.log('Posting to:', SCRIPT_URL);
+
       try {
         const response = await fetch(SCRIPT_URL, {
           method: 'POST',
@@ -501,7 +504,11 @@
           headers: { 'Content-Type': 'application/json' }
         });
 
+        console.log('Response status:', response.status);
+        console.log('Response ok:', response.ok);
+
         const result = await response.json();
+        console.log('Response result:', result);
         
         if (result.result === 'success') {
           const msg = document.getElementById('successMessage');
@@ -510,11 +517,13 @@
           setTimeout(() => msg.classList.remove('show'), 4000);
         } else {
           console.error('Server error:', result.message);
-          alert('There was an error sending your inquiry. Please try again.');
+          alert('Server error: ' + (result.message || 'Unknown error'));
         }
       } catch (err) {
-        console.error('Form submission error:', err);
-        alert('There was a network error. Please check your connection and try again.');
+        console.error('Full error object:', err);
+        console.error('Error message:', err.message);
+        console.error('Error type:', err.name);
+        alert('Error: ' + err.message + '. Check browser console for details.');
       }
     });
   </script>
