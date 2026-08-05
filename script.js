@@ -19,7 +19,7 @@ form.addEventListener('submit', async (event) => {
   const status = form.querySelector('.form-status');
   button.disabled = true; button.textContent = 'Sending…'; status.textContent = '';
   try {
-    const endpoint = 'https://script.google.com/macros/s/AKfycbzewhTPnEztLlX-2akbLmz3psrrxPFhtmlGprxVJ3WOotf9GU9_u9qZKRd2Uy-1IOE5/exec';
+    const endpoint = 'https://script.google.com/macros/s/AKfycbwVqv-mM40H0m8HV_hKYQUcmhuf7x7E6Iin2nwSGc0e9ljiTUJxH4whhYz2Ej4Vz3Vj/exec';
     const data = {
       name: form.querySelector('input[name="name"]').value,
       company: form.querySelector('input[name="company"]').value || '',
