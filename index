@@ -1,35 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Borbon — Businesses delivering digital, creative, and print solutions</title>
-<meta name="description" content="Borbon is a network of businesses delivering digital, creative, and print solutions — by G Borbon. Explore LaunchBox, LaunchBox We Do, Equal Prints, B+L Prints, and MGifts.">
-<meta property="og:title" content="Borbon — Businesses delivering digital, creative, and print solutions">
-<meta property="og:type" content="website">
-<meta property="og:description" content="A network of businesses delivering digital, creative, and print solutions.">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Borbon",
-  "url": "https://borbon.cc",
-  "founder": { "@type": "Person", "name": "G Borbon" },
-  "subOrganization": [
-    { "@type": "Organization", "name": "LaunchBox", "url": "https://launchbox.borbon.cc" },
-    { "@type": "Organization", "name": "LaunchBox We Do", "url": "https://launchboxwedo.borbon.cc" },
-    { "@type": "Organization", "name": "Equal Prints", "url": "https://equal.borbon.cc" },
-    { "@type": "Organization", "name": "B+L Prints", "url": "https://blprints.borbon.cc" },
-    { "@type": "Organization", "name": "MGifts", "url": "https://mgifts.borbon.cc" }
-  ]
-}
-</script>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>G Borbon | Creative. Digital. Print.</title>
+
+<meta name="description" content="Delivering digital + creative + print solutions through a network of brands.">
+
+<meta name="theme-color" content="#0A0A0B">
+
+<meta property="og:title" content="G Borbon | Creative. Digital. Print.">
+<meta property="og:description" content="Delivering digital + creative + print solutions.">
+<meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+--bg:#09090B;
+--surface:#111217;
+--surface-hover:#181A20;
+
+--border:rgba(255,255,255,.08);
+
+--text:#F8FAFC;
+--muted:#9CA3AF;
+
+--primary:#A855F7;
+--primary-light:#C084FC;
+
+--radius:20px;
+
+--shadow:
+0 20px 60px rgba(0,0,0,.45);
+
+--max-width:1220px;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Geist',sans-serif;
+
+background:var(--bg);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+line-height:1.6;
+
+}
+
+/**************************************************
+BACKGROUND
+**************************************************/
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+
+radial-gradient(circle at 20% 10%,rgba(168,85,247,.18),transparent 35%),
+
+radial-gradient(circle at 80% 30%,rgba(120,60,255,.14),transparent 30%),
+
+radial-gradient(circle at 50% 90%,rgba(120,60,255,.12),transparent 40%);
+
+pointer-events:none;
+
+z-index:-2;
+
+animation:floatGlow 18s linear infinite;
+
+}
+
+@keyframes floatGlow{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-30px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/**************************************************
+LAYOUT
+**************************************************/
+
+.container{
+
+width:min(var(--max-width),92%);
+
+margin:auto;
+
+}
+
+/**************************************************
+HEADER
+**************************************************/
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+right:0;
+
+z-index:999;
+
+backdrop-filter:blur(18px);
+
+background:rgba(9,9,11,.55);
+
+border-bottom:1px solid rgba(255,255,255,.04);
+
+transition:.35s;
+
+}
+
+nav{
+
+height:78px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+text-decoration:none;
+
+color:#fff;
+
+}
+
+.logo img{
+
+height:48px;
+
+width:auto;
+
+}
+
+.logo span{
+
+font-size:1.2rem;
+
+font-weight:700;
+
+letter-spacing:-.03em;
+
+}
+
+/**************************************************
+NAV
+**************************************************/
+
+nav ul{
+
+display:flex;
+
+gap:40px;
+
+list-style:none;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+color:var(--muted);
+
+font-weight:500;
+
+transition:.25s;
+
+}
+
+nav a:hover{
+
+color:#fff;
+
+}
+
+/**************************************************
+HERO
+**************************************************/
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:160px 20px 100px;
+
+}
+
+.hero-logo{
+
+width:110px;
+
+margin:0 auto 40px;
+
+display:block;
+
+filter:drop-shadow(0 0 35px rgba(168,85,247,.35));
+
+}
+
+.hero h1{
+
+font-size:clamp(3rem,8vw,5rem);
+
+line-height:1.03;
+
+letter-spacing:-0.05em;
+
+font-weight:700;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.hero h1 span{
+
+background:linear-gradient(
+
+90deg,
+
+#FFFFFF,
+
+#E7D4FF,
+
+#FFFFFF
+
+);
+
+background-size:200%;
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+animation:gradientMove 7s linear infinite;
+
+}
+
+@keyframes gradientMove{
+
+0%{
+
+background-position:0%;
+
+}
+
+100%{
+
+background-position:200%;
+
+}
+
+}
+
+.tagline{
+
+margin-top:28px;
+
+font-size:1.05rem;
+
+letter-spacing:.35em;
+
+text-transform:uppercase;
+
+color:var(--muted);
+
+font-weight:500;
+
+}
+
+.scroll-link{
+
+margin-top:65px;
+
+display:inline-flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:16px 26px;
+
+border-radius:999px;
+
+text-decoration:none;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+color:#fff;
+
+transition:.3s;
+
+}
+
+.scroll-link:hover{
+
+transform:translateY(-3px);
+
+border-color:rgba(168,85,247,.55);
+
+box-shadow:0 10px 30px rgba(168,85,247,.18);
+
+}
+
+/**************************************************
+SECTION
+**************************************************/
+
+section{
+
+padding:110px 0;
+
+}
+
+.section-title{
+
+font-size:2.4rem;
+
+font-weight:700;
+
+letter-spacing:-.04em;
+
+margin-bottom:18px;
+
+text-align:center;
+
+}
+
+.section-subtitle{
+
+color:var(--muted);
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+/**************************************************
+CARDS
+**************************************************/
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:28px;
+
+}
+
+.card{
+
+background:var(--surface);
+
+border:1px solid var(--border);
+
+border-radius:var(--radius);
+
+padding:40px;
+
+transition:.35s;
+
+box-shadow:var(--shadow);
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+background:var(--surface-hover);
+
+border-color:rgba(168,85,247,.35);
+
+}
+
+.card img{
+
+height:72px;
+
+margin-bottom:24px;
+
+}
+
+.card h3{
+
+font-size:1.4rem;
+
+margin-bottom:16px;
+
+}
+
+.card p{
+
+color:var(--muted);
+
+margin-bottom:28px;
+
+}
+
+.card a{
+
+text-decoration:none;
+
+color:#fff;
+
+font-weight:600;
+
+}
+
+/**************************************************
+RESPONSIVE
+**************************************************/
+
+@media(max-width:900px){
+
+nav{
+
+height:70px;
+
+}
+
+nav ul{
+
+gap:22px;
+
+}
+
+.hero{
+
+padding-top:140px;
+
+}
+
+.tagline{
+
+letter-spacing:.18em;
+
+font-size:.95rem;
+
+}
+
+}
+
+@media(max-width:768px){
+
+nav{
+
+flex-direction:column;
+
+height:auto;
+
+padding:20px 0;
+
+gap:18px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.hero-logo{
+
+width:88px;
+
+}
+
+.hero h1{
+
+font-size:2.8rem;
+
+}
+
+.section-title{
+
+font-size:2rem;
+
+}
+
+}
+
+</style>
+
+</head>
 <style>
   :root{
     --paper:#F7F5EF;
